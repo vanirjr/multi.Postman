@@ -177,7 +177,7 @@ Examples:
 **`BEWARE:`** *Once you are done with the installation, you must **reboot** your machine in order to effect your installation.*
 
 
-###Uninstallaling multi.Postman
+###Uninstalling multi.Postman
 
 - When the installation process is finished, you will have a new, and very important, file automatically generated during the installation process named `uninstall.sh`. This file is your uninstallation script. In case you decide to uninstall **multi.Postman**, just run this shell script and reboot your system, and your Postfix will return to its orginal configuration.
 
