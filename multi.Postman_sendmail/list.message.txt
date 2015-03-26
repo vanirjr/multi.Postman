@@ -3,10 +3,10 @@ This is a Test Message from *multi.Postman* to [FIRST_NAME] [LAST_NAME].
 Dear [FIRST_NAME] [LAST_NAME], Thank you for contacting us.
 Please click on the link below in order to confirm your request.
 
-http://www.appgenda.net/confirmation.php?id=[ID]
+http://www.example.com/confirmation.php?id=[ID]
 
 If you don't recall making this request with us,
 Please click on the link below in order to cancel your request.
 
-http://www.appgenda.net/cancel.php?id=[EMAIL]
+http://www.example.com/cancel.php?id=[EMAIL]
 
