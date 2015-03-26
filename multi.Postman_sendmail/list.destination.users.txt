@@ -1,0 +1,12 @@
+root@example.com,Mr.,Root,78ACB551
+postfix@example.com,Dr.,PostFix,018YYIAA4367
+mysql@example.com,Miss,MySQL,23UUI77NB909
+root@another-example.com,Mr.,Root,78ACB551
+postfix@another-example.com,Dr.,PostFix,018YYIAA4367
+mysql@another-example.com,Miss,MySQL,23UUI77NB909
+root@example.com,Mr.,Root,78ACB551
+postfix@example.com,Dr.,PostFix,018YYIAA4367
+mysql@example.com,Miss,MySQL,23UUI77NB909
+root@another-example.com,Mr.,Root,78ACB551
+postfix@another-example.com,Dr.,PostFix,018YYIAA4367
+mysql@another-example.com,Miss,MySQL,23UUI77NB909
