@@ -1,0 +1,3 @@
+Test Message from mPostman!
+2nd Message from mPostman, the Greatest!
+This is a test from mPostman... the best Bulk Mailer ever!
