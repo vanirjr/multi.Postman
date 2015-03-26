@@ -9,7 +9,7 @@ The software is divided into 2 sections: the first one is the system installatio
 multi.Postman_install
 ---------------------
 
-This is your very first step. Running the `mPostman_install.php`, within this folder, will turn your Postfix SMTP server into a Multi-Instance server, which will handle the incomming and outgoing SMTP traffic for each of your IP interfaces completely independent, giving you total control of each interface, including separated mailqueue management, start and stop of each desired interface, and everything else.
+This is your very first step. Running the `mPostman_install.php`, will turn your Postfix SMTP server into a Multi-Instance server, which will handle the incomming and outgoing SMTP traffic for each of your IP interfaces completely independent, giving you total control of each interface, including separated mailqueue management, start and stop of each desired interface, and everything else.
 
 Before running the `mPostman_install.php`, you must make sure that:
 
@@ -83,7 +83,7 @@ Please, use this option only if you know exactly what you are doing. Setting the
 		php mPostman_install.php --sys-install=test
 
 
-The following set of parameters below should only be used if you have choosen to do a `custom` installation type. These parameters are completely obsolete, if you have choosen any of the other installation types.
+The following set of parameters below should only be used if you have choosen to do a `custom` installation type. These parameters are completely useless, if you have choosen any of the other installation types.
 
 
 ####--conf-dir=[value]
@@ -139,7 +139,7 @@ Examples:
 
 - performing a default `freebsd` installation, with a queue lifetime of 18 hours:
 
-		php mPostman_install.php  --queue-life=1d
+		php mPostman_install.php  --queue-life=18h
 
 - performing a default `linux` installation, with a queue lifetime of 1 day:
 
