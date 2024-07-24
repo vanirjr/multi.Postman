@@ -23,7 +23,7 @@ Before running the `mPostman_install.php`, you must make sure that:
 Once you have all the above checked out, it is time to move to the installation process.
 
 
-###netmap.csv
+### netmap.csv
 
 The next step is to create your netmap file and save it as `netmap.csv`. There is a sample file in place, you can just edit that one, or replace it with your own, it is entirely up to you.
 
@@ -44,11 +44,11 @@ Example:
 Once you are done with the file `netmap.csv`, it is time to run the `mPostman_install.php`.
 
 
-###mPostman_install.php
+### mPostman_install.php
 
 Before running the `mPostman_install.php`, you must understand its configuration parameters. They are as follows:
 	
-####--sys-install=[value]
+#### --sys-install=[value]
 
 This parameter tells the installation program what type of system you are going to be installing multi.Postman on. The `[value]` options for this parameter are: `freebsd`, `linux`, `custom` and `test`.
 
@@ -86,31 +86,31 @@ Please, use this option only if you know exactly what you are doing. Setting the
 The following set of parameters below should only be used if you have choosen to do a `custom` installation type. These parameters are completely useless, if you have choosen any of the other installation types.
 
 
-####--conf-dir=[value]
+#### --conf-dir=[value]
 
 - [value] is the path for Postfix configuration directory. The default is `/usr/local/etc`
 
-####--sbin-dir=[value]
+#### --sbin-dir=[value]
 
 - [value] is the path for Postfix binaries directory. The default is `/usr/local/sbin`
 
-####--bin-dir=[value]
+#### --bin-dir=[value]
 
 - [value] is the path for Postfix mailq commands directory. The default is `/usr/local/bin`
 
-####--spool-dir=[value]
+#### --spool-dir=[value]
 
 - [value] is the path for Postfix spool directory. The default is `/var/spool`
 
-####--data-dir=[value]
+#### --data-dir=[value]
 
 - [value] is the path for Postfix data directory. The default is `/var/db`
 
-####--start-dir=[value]
+#### --start-dir=[value]
 
 - [value] is the path for System start up scripts directory. The default is `/usr/local/etc/rc.d`
 
-####--libexec-dir=[value]
+#### --libexec-dir=[value]
 
 - [value] is the path for Postfix daemon directory. The default is `/usr/local/libexec`
 
@@ -132,7 +132,7 @@ The following set of parameters below should only be used if you have choosen to
 Remember, the parameters above should only be used if you have choosen a `custom` installation type. The next, and also, the last parameter for the `mPostman_install.php`, can be used at anytime.
 
 
-####--queue-life=[value]
+#### --queue-life=[value]
 
 This parameter defines the lifetime of your messages in the mailqueue. The default value is 12h (12 hours).  
 Examples:
@@ -150,7 +150,7 @@ Examples:
 		php mPostman_install.php --sys-install=custom --conf-dir=/etc --sbin-dir=/usr/sbin --bin-dir=/usr/bin --spool-dir=/var/spool --data-dir=/var/db --start-dir=/etc/rc.d --libexec-dir=/usr/libexec --queue-life=3d
 
 
-####`mPostman_install.php` command line examples:
+#### `mPostman_install.php` command line examples:
 
 
 - Installing the multi.Postman system with all the default options:
@@ -177,14 +177,14 @@ Examples:
 **`BEWARE:`** *Once you are done with the installation, you must **reboot** your machine in order to effect your installation.*
 
 
-###Uninstalling multi.Postman
+### Uninstalling multi.Postman
 
 - When the installation process is finished, you will have a new, and very important, file automatically generated during the installation process named `uninstall.sh`. This file is your uninstallation script. In case you decide to uninstall **multi.Postman**, just run this shell script and reboot your system, and your Postfix will return to its orginal configuration.
 
 	**Tip:** *This is also very useful in case you need to change your netmap. Changes to the IP numbers and domain names are very common for bulk mailers, so if you ever need to do that, just run the `uninstall.sh`, create a new 'netmap.csv' and run the `mPostman_install.php` again... done! You're ready to go!*
 
 
-###Post Installation Tips
+### Post Installation Tips
 
 - Please, note that the **multi.Postman** installation will replace your Postfix configuration file `main.cf` with a new one. Your original `main.cf` file is saved as `main.cf.before.mPostman.install`. In case you have any custom modifications that you may have made to the `main.cf` file, prior to the **multi.Postman** installation, you can just copy them from the backup file `main.cf.before.mPostman.install` and add them manually to the new `main.cf` file. Please, be very careful with modifying any of the parameters which are already in place, any misconfiguration can lead to a system failure.
 
@@ -282,11 +282,11 @@ multi.Postman_sendmail
 
 This folder contains the Bulk Mailer Software `mPostman_sendmail.php`, along with a set of files required by it. Below is a detailed description for each of those files:
 	
-###mPostman_sendmail.php
+### mPostman_sendmail.php
 
 This is the multi.Postman sendmail program. It has many configuration options, as follows:
 			
-####-l
+#### -l
 - This option will list your netmap configuration.
 
 	Example:
@@ -316,7 +316,7 @@ This is the multi.Postman sendmail program. It has many configuration options, a
 
 
 
-####--i=[value]
+#### --i=[value]
 
 - This option tells the program which IP interface is to be used for sending the mail.  
 The [value] is the number of the interface you want to use. You can use only one interface number, or many numbers separated by comma (,). You can also use the value 'all', in case you want to use all interfaces. If you supress this parameter, the program will use its default value, which is '0', and your mail will be sent from the interface '0'.
@@ -336,7 +336,7 @@ The [value] is the number of the interface you want to use. You can use only one
 		php mPostman_sendmail.php --i=all
 
 
-####--rotate-every=[value]
+#### --rotate-every=[value]
 
 - This option tells the program when both the content of the email and the IP interface is going to rotate.  
 The [value] is any integer number. Let's say you want to rotate your content and IP interface every 20 emails sent, then your [value] should '20'. The default value for this option is '1', so if you supress this parameter from your command, it will rotate every 1 email sent.
@@ -352,7 +352,7 @@ The [value] is any integer number. Let's say you want to rotate your content and
 		php mPostman_sendmail.php --i=all --rotate-every=150
 
 
-####--type=[value]
+#### --type=[value]
 
 - This option tells the program what kind of email body is your message.  
 The [value] can be 'txt' for text messages, or, 'html' for html messages. The default value for this option is 'txt', therefore is you supress this parameter from your command, the program will send messages in the txt format.
@@ -368,7 +368,7 @@ The [value] can be 'txt' for text messages, or, 'html' for html messages. The de
 		php mPostman_sendmail.php
 
 
-####--set-interval=[value]
+#### --set-interval=[value]
 
 - This parameter tells the program how long is the interval in-between the emails being sent.  
 The [value] can be any integer number. This number represents the waiting period in 'seconds'. The default value for this parameter is '0', meaning that there will be no interval in-between the emails being sent.
@@ -381,12 +381,12 @@ The [value] can be any integer number. This number represents the waiting period
 
 
 
-###interfaces.inc
+### interfaces.inc
 
 - This file is your netmap configuration. This file is generated automatically during your installation process. You should not modify this file.
 
 
-###list.destination.users.txt
+### list.destination.users.txt
 
 - This is your users email recipent list. The list of emails you are going to be sending the message to.  
 
@@ -403,7 +403,7 @@ The [value] can be any integer number. This number represents the waiting period
 	Note that you don't need to add all the these fields to every line. Only the `<email address>` is needed. The other fields are only needed if you want to personalize your message by adding the value of those fields to your email body. See below the description for the files `list.message.html` and `list.message.txt` in order to understand how to place the content of these fields in your message body.
 
 
-###list.local.users.txt
+### list.local.users.txt
 
 - This is your list of local users that will be in your `FROM` email address. This is a text file containing one username per line.
 
@@ -422,12 +422,12 @@ The [value] can be any integer number. This number represents the waiting period
 	**Tip:** *You must be asking yourself why can't you put a full email address in every line, instead of only usernames, right? Well, there is a purpose behind this practice. This will ensure that your email `FROM` will always have the `@domain.com` matching the domain of your hostname assigned to the IP interface you're using. This pratctice will improve your delivery rate, as one of the most basic rules for filtering emails in the biggest ESP's is, not accepting emails from addresses not matching the sender hostname.*
 
 
-###list.subjects.txt
+### list.subjects.txt
 
 - This is your message subject line. This is a text file with one subject per line. In the same way, if you add only one line, you will have your whole mail sent using this same subject line, if you add 2 or more subject lines, they will rotate following the criteria defined by the option **--rotate-every=**, as described above.
 
 
-###list.message.html
+### list.message.html
 
 - This is the content of your email body in HTML format. It can be any HTML page. If you want to customize every email sent, you can add the following variables to your HTML page, respectively:
 
@@ -442,7 +442,7 @@ The [value] can be any integer number. This number represents the waiting period
 	Please, have a look at the file `list.message.html` provided, it is a good example of how to use the variables in you email body.
 
 
-###list.message.txt
+### list.message.txt
 
 - This is the content of your email body in TEXT format. It can be any text. If you want to customize every email sent, you can add the following variables to your text, respectively:
 
@@ -457,7 +457,7 @@ The [value] can be any integer number. This number represents the waiting period
 	Please, have a look at the file `list.message.txt` provided, it is a good example of how to use the variables in you email body.
 
 
-###log.txt
+### log.txt
 
 - This file is automatically generated everytime you run the `mPostman_sendmail.php` command. It is the program's output log for each email sent out.
 
@@ -470,7 +470,7 @@ The [value] can be any integer number. This number represents the waiting period
 		message from news@example.com to johnmayer@yahoo.com ==> sent from Interface 0, IP: 192.168.0.1, Host: www.example.com @ 2015-03-25, 21:20:50
 
 
-###Tips for Sending Out your Mail
+### Tips for Sending Out your Mail
 
 - Always use the `&` symbol at the end of your `mPostman_sendmail.php` command. This will make the shell execute the command in the background, in a subshell. The shell does not wait for the command to finish, and  returns you to the command prompt. You can even log out from the system, and your `mPostman_sendmail.php` command will continue running up to the end. This is very handy, particularly if you have a very long email list that could take hours to be sent out.
 
